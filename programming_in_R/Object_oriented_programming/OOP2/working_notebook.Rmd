@@ -1,0 +1,58 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+## Setup
+
+This is my idea how a working notebook may look like. When working on a problem, e.g. exercise 01 ("`ex01Divide`") in `01_exercise_vectors.R`, you should try to work towards a solution gradually. First you should probably think of a few test-cases that you want to consider. The harder exercises even give you specific cases of how the output of a function should look like given a particular input. In this (very simple) case it could be something like
+
+```{r}
+input1.x <- 10
+input1.y <- 5
+output1.expected <- 2
+
+input2.x <- 3
+input2.y <- 2
+output2.expected <- 1.5
+```
+
+We have this at the top because we probably don't want to change these a lot, so this cell doesn't get evaluated all too often.
+
+## Workbench
+
+Now we may actually call the function that is *in* the `01_exercise_vectors.R`-file. For this, we "source" the R-file and run it.
+
+```{r}
+source("R/01_exercise_vectors.R")
+
+output1 <- ex01Divide(input1.x, input1.y)
+print(output1)
+
+all.equal(output1, output1.expected)
+
+```
+
+This both shows you the output as well as a comparison to the output you expect. Both can be useful: See what the output is you get, and, in case you can't see at a glance, whether it is actually what you expect.
+
+## Scratchpad
+
+Finally you may want to experiment a little, see how the different methods you may need for the function work out etc. You can do this in the terminal, but you could also reserve a part of the working notebook for this.
+
+This is useful because if you want to try something again that you did a while ago, you don't need to look through your history to find it and have it instead in a place where you can remember it. You could, for example, order different ideas by how important you consider them, or put some things here that you need to run quite often.
+
+```{r}
+# the following is just an idea of what a scratchpad might look like.
+# By its very nature it is just nonsensical if you haven't worked with
+# it yourself.
+
+c(1, 2) * 2
+
+c(1, 2) * c(2, 2)
+
+c(1, 2, 3) * c(1, 1, 1, 1, 1)
+
+```
+
+
+This document doesn't need to be a `*.Rmd`-file; you could also have it as a `*.R`-file with just code and comments. The advantage of .Rmd is that it can use markdown, so you can use that for highlighting. It also gives you the possibility to conveniently evaluate blocks of code at once (green arrow at the top right of each block), so you can separate infrequently-used-and-slow code from frequently-used-and-fast code.
